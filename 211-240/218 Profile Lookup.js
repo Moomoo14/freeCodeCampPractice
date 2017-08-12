@@ -29,7 +29,16 @@ var contacts = [
 
 function lookUp (firstName, prop) {
   // 请把你的代码写在这条注释以下
-
+  for (var i = 0; i < contacts.length; i++) {
+    if (firstName === contacts[i].firstName) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
   // 请把你的代码写在这条注释以上
 }
 
